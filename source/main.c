@@ -773,10 +773,14 @@ int payload_main(struct payload_args *args)
     SOCK_LOG(sock, "[+] got auth manager: %p\n", authmgr_handle);
 
     preload_dirents(sock, "/", g_dirent_buf + (0 * 0x10000));
+
+*/
     preload_dirents(sock, "/system/common/lib", g_dirent_buf + (1 * 0x10000));
     preload_dirents(sock, "/system_ex/common_ex/lib", g_dirent_buf + (2 * 0x10000));
     preload_dirents(sock, "/system/priv/lib", g_dirent_buf + (3 * 0x10000));
     preload_dirents(sock, "/system/sys", g_dirent_buf + (4 * 0x10000));
+/*
+*/
     preload_dirents(sock, "/system/vsh", g_dirent_buf + (5 * 0x10000));
 
     dump_dir(sock, authmgr_handle, &offsets, g_dirent_buf + (0 * 0x10000), "/", "/mnt/usb0/PS5");
