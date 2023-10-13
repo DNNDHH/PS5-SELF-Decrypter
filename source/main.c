@@ -772,9 +772,10 @@ int payload_main(struct payload_args *args)
     authmgr_handle = get_authmgr_sm(sock, &offsets);
     SOCK_LOG(sock, "[+] got auth manager: %p\n", authmgr_handle);
 
-    preload_dirents(sock, "/", g_dirent_buf + (0 * 0x10000));
 
-    preload_dirents(sock, "/system/vsh", g_dirent_buf + (5 * 0x10000));
+    preload_dirents(sock, "/data", g_dirent_buf + (5 * 0x10000));
+
+    /*
     preload_dirents(sock, "/system/vsh/app/NPXS40109", g_dirent_buf + (7 * 0x10000));
     preload_dirents(sock, "/system_ex/app/NPXS40000", g_dirent_buf + (8 * 0x10000));
     preload_dirents(sock, "/system_ex/app/NPXS40001/psm/Application", g_dirent_buf + (9 * 0x10000));
@@ -792,9 +793,11 @@ int payload_main(struct payload_args *args)
     preload_dirents(sock, "/system_ex/app/NPXS40140/cdc/lib", g_dirent_buf + (21 * 0x10000));
     preload_dirents(sock, "/system_ex/app/NPXS40140/psm/Application", g_dirent_buf + (22 * 0x10000));
     preload_dirents(sock, "/system_ex/priv_ex/lib", g_dirent_buf + (23 * 0x10000));
-
+    */
 	
-    dump_dir(sock, authmgr_handle, &offsets, g_dirent_buf + (5 * 0x10000), "/system/vsh", "/mnt/usb0/PS5/system/vsh");
+    dump_dir(sock, authmgr_handle, &offsets, g_dirent_buf + (5 * 0x10000), "/data", "/mnt/usb0/PS5/data");
+
+    /*
     dump_dir(sock, authmgr_handle, &offsets, g_dirent_buf + (7 * 0x10000), "/system/vsh/app/NPXS40109", "/mnt/usb0/PS5/system/vsh/app/NPXS40109");
     dump_dir(sock, authmgr_handle, &offsets, g_dirent_buf + (8 * 0x10000), "/system_ex/app/NPXS40000", "/mnt/usb0/PS5/system_ex/app/NPXS40000");
     dump_dir(sock, authmgr_handle, &offsets, g_dirent_buf + (9 * 0x10000), "/system_ex/app/NPXS40001/psm/Application", "/mnt/usb0/PS5/system_ex/app/NPXS40001/psm/Application");
@@ -812,6 +815,7 @@ int payload_main(struct payload_args *args)
     dump_dir(sock, authmgr_handle, &offsets, g_dirent_buf + (21 * 0x10000), "/system_ex/app/NPXS40140/cdc/lib", "/mnt/usb0/PS5/system_ex/app/NPXS40140/cdc/lib");
     dump_dir(sock, authmgr_handle, &offsets, g_dirent_buf + (22 * 0x10000), "/system_ex/app/NPXS40140/psm/Application", "/mnt/usb0/PS5/system_ex/app/NPXS40140/psm/Application");
     dump_dir(sock, authmgr_handle, &offsets, g_dirent_buf + (23 * 0x10000), "/system_ex/priv_ex/lib", "/mnt/usb0/PS5/system_ex/priv_ex/lib");
+    */
 
     SOCK_LOG(sock, "[+] done!\n");
 
