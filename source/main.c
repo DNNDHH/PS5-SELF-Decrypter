@@ -772,48 +772,79 @@ int payload_main(struct payload_args *args)
     authmgr_handle = get_authmgr_sm(sock, &offsets);
     SOCK_LOG(sock, "[+] got auth manager: %p\n", authmgr_handle);
 
-
-    preload_dirents(sock, "/data", g_dirent_buf + (5 * 0x10000));
-
     /*
+    preload_dirents(sock, "/data", g_dirent_buf + (5 * 0x10000));
     preload_dirents(sock, "/system/vsh/app/NPXS40109", g_dirent_buf + (7 * 0x10000));
     preload_dirents(sock, "/system_ex/app/NPXS40000", g_dirent_buf + (8 * 0x10000));
+    */
+    
     preload_dirents(sock, "/system_ex/app/NPXS40001/psm/Application", g_dirent_buf + (9 * 0x10000));
+    /*
     preload_dirents(sock, "/system_ex/app/NPXS40028", g_dirent_buf + (10 * 0x10000));
     preload_dirents(sock, "/system_ex/app/NPXS40074", g_dirent_buf + (11 * 0x10000));
+    */
+    
     preload_dirents(sock, "/system_ex/app/NPXS40074/psm/Application", g_dirent_buf + (12 * 0x10000));
+    /*
     preload_dirents(sock, "/system_ex/app/NPXS40087", g_dirent_buf + (13 * 0x10000));
+    */
+    
     preload_dirents(sock, "/system_ex/app/NPXS40087/psm/Application", g_dirent_buf + (14 * 0x10000));
     preload_dirents(sock, "/system_ex/app/NPXS40093/psm/Application", g_dirent_buf + (15 * 0x10000));
+    /*
     preload_dirents(sock, "/system_ex/app/NPXS40099", g_dirent_buf + (16 * 0x10000));
+    */
+    
     preload_dirents(sock, "/system_ex/app/NPXS40099/psm/Application", g_dirent_buf + (17 * 0x10000));
     preload_dirents(sock, "/system_ex/app/NPXS40106/psm/Application", g_dirent_buf + (18 * 0x10000));
+    /*
     preload_dirents(sock, "/system_ex/app/NPXS40140", g_dirent_buf + (19 * 0x10000));
     preload_dirents(sock, "/system_ex/app/NPXS40140/cdc/bin", g_dirent_buf + (20 * 0x10000));
     preload_dirents(sock, "/system_ex/app/NPXS40140/cdc/lib", g_dirent_buf + (21 * 0x10000));
+    */
+    
     preload_dirents(sock, "/system_ex/app/NPXS40140/psm/Application", g_dirent_buf + (22 * 0x10000));
+	
+    /*
     preload_dirents(sock, "/system_ex/priv_ex/lib", g_dirent_buf + (23 * 0x10000));
     */
 	
+    /*
     dump_dir(sock, authmgr_handle, &offsets, g_dirent_buf + (5 * 0x10000), "/data", "/mnt/usb0/PS5/data");
-
+    */
+    
     /*
     dump_dir(sock, authmgr_handle, &offsets, g_dirent_buf + (7 * 0x10000), "/system/vsh/app/NPXS40109", "/mnt/usb0/PS5/system/vsh/app/NPXS40109");
     dump_dir(sock, authmgr_handle, &offsets, g_dirent_buf + (8 * 0x10000), "/system_ex/app/NPXS40000", "/mnt/usb0/PS5/system_ex/app/NPXS40000");
+    */
+    
     dump_dir(sock, authmgr_handle, &offsets, g_dirent_buf + (9 * 0x10000), "/system_ex/app/NPXS40001/psm/Application", "/mnt/usb0/PS5/system_ex/app/NPXS40001/psm/Application");
+    /*
     dump_dir(sock, authmgr_handle, &offsets, g_dirent_buf + (10 * 0x10000), "/system_ex/app/NPXS40028", "/mnt/usb0/PS5/system_ex/app/NPXS40028");
     dump_dir(sock, authmgr_handle, &offsets, g_dirent_buf + (11 * 0x10000), "/system_ex/app/NPXS40074", "/mnt/usb0/PS5/system_ex/app/NPXS40074");
+    */
+    
     dump_dir(sock, authmgr_handle, &offsets, g_dirent_buf + (12 * 0x10000), "/system_ex/app/NPXS40074/psm/Application", "/mnt/usb0/PS5/system_ex/app/NPXS40074/psm/Application");
+    /*
     dump_dir(sock, authmgr_handle, &offsets, g_dirent_buf + (13 * 0x10000), "/system_ex/app/NPXS40087", "/mnt/usb0/PS5/system_ex/app/NPXS40087");
+    */
+    
     dump_dir(sock, authmgr_handle, &offsets, g_dirent_buf + (14 * 0x10000), "/system_ex/app/NPXS40087/psm/Application", "/mnt/usb0/PS5/system_ex/app/NPXS40087/psm/Application");
     dump_dir(sock, authmgr_handle, &offsets, g_dirent_buf + (15 * 0x10000), "/system_ex/app/NPXS40093/psm/Application", "/mnt/usb0/PS5/system_ex/app/NPXS40093/psm/Application");
+    /*
     dump_dir(sock, authmgr_handle, &offsets, g_dirent_buf + (16 * 0x10000), "/system_ex/app/NPXS40099", "/mnt/usb0/PS5/system_ex/app/NPXS40099");
+    */
+    
     dump_dir(sock, authmgr_handle, &offsets, g_dirent_buf + (17 * 0x10000), "/system_ex/app/NPXS40099/psm/Application", "/mnt/usb0/PS5/system_ex/app/NPXS40099/psm/Application");
     dump_dir(sock, authmgr_handle, &offsets, g_dirent_buf + (18 * 0x10000), "/system_ex/app/NPXS40106/psm/Application", "/mnt/usb0/PS5/system_ex/app/NPXS40106/psm/Application");
+    /*
     dump_dir(sock, authmgr_handle, &offsets, g_dirent_buf + (19 * 0x10000), "/system_ex/app/NPXS40140", "/mnt/usb0/PS5/system_ex/app/NPXS40140");
     dump_dir(sock, authmgr_handle, &offsets, g_dirent_buf + (20 * 0x10000), "/system_ex/app/NPXS40140/cdc/bin", "/mnt/usb0/PS5/system_ex/app/NPXS40140/cdc/bin");
     dump_dir(sock, authmgr_handle, &offsets, g_dirent_buf + (21 * 0x10000), "/system_ex/app/NPXS40140/cdc/lib", "/mnt/usb0/PS5/system_ex/app/NPXS40140/cdc/lib");
+    */
+    
     dump_dir(sock, authmgr_handle, &offsets, g_dirent_buf + (22 * 0x10000), "/system_ex/app/NPXS40140/psm/Application", "/mnt/usb0/PS5/system_ex/app/NPXS40140/psm/Application");
+    /*
     dump_dir(sock, authmgr_handle, &offsets, g_dirent_buf + (23 * 0x10000), "/system_ex/priv_ex/lib", "/mnt/usb0/PS5/system_ex/priv_ex/lib");
     */
 
