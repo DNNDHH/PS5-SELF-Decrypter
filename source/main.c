@@ -775,7 +775,6 @@ int payload_main(struct payload_args *args)
     preload_dirents(sock, "/", g_dirent_buf + (0 * 0x10000));
 
     preload_dirents(sock, "/system/vsh", g_dirent_buf + (5 * 0x10000));
-    preload_dirents(sock, "/system/vsh/app/NPXS40039", g_dirent_buf + (6 * 0x10000));
     preload_dirents(sock, "/system/vsh/app/NPXS40109", g_dirent_buf + (7 * 0x10000));
     preload_dirents(sock, "/system_ex/app/NPXS40000", g_dirent_buf + (8 * 0x10000));
     preload_dirents(sock, "/system_ex/app/NPXS40001/psm/Application", g_dirent_buf + (9 * 0x10000));
@@ -796,7 +795,6 @@ int payload_main(struct payload_args *args)
 
 	
     dump_dir(sock, authmgr_handle, &offsets, g_dirent_buf + (5 * 0x10000), "/system/vsh", "/mnt/usb0/PS5/system/vsh");
-    dump_dir(sock, authmgr_handle, &offsets, g_dirent_buf + (6 * 0x10000), "/system/vsh/app/NPXS40039", "/mnt/usb0/PS5/system/vsh/app/NPXS40039");
     dump_dir(sock, authmgr_handle, &offsets, g_dirent_buf + (7 * 0x10000), "/system/vsh/app/NPXS40109", "/mnt/usb0/PS5/system/vsh/app/NPXS40109");
     dump_dir(sock, authmgr_handle, &offsets, g_dirent_buf + (8 * 0x10000), "/system_ex/app/NPXS40000", "/mnt/usb0/PS5/system_ex/app/NPXS40000");
     dump_dir(sock, authmgr_handle, &offsets, g_dirent_buf + (9 * 0x10000), "/system_ex/app/NPXS40001/psm/Application", "/mnt/usb0/PS5/system_ex/app/NPXS40001/psm/Application");
